@@ -1,6 +1,11 @@
-def main():
-    print("Hello from claim-processing-pipeline!")
+from fastapi import FastAPI,File, Form, HTTPException, UploadFile
+from dotenv import load_dotenv
+
+app=FastAPI()
+load_dotenv()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
