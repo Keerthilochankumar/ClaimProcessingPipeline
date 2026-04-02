@@ -1,7 +1,7 @@
 import re
 import json
 
-def _extract_json(text: str) -> dict | list | None:
+def extract_json(text: str) -> dict | list | None:
     if not text:
         return None
     fenced = re.search(r"```(?:json)?\s*\n?(.*?)\n?\s*```", text, re.DOTALL)
