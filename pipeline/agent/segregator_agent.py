@@ -40,7 +40,7 @@ IMPORTANT: You MUST respond with ONLY this exact JSON format, nothing else:
 
 
 
-async def segregator_node(state: State) -> dict[str, Any]:
+async def segregator_agent(state: State) -> dict[str, Any]:
     pdf_path = state["pdf_path"]
     pages_text, pages_images = extract_pages_content(pdf_path)
 
