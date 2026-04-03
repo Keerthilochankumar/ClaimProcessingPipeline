@@ -14,10 +14,10 @@ def get_chat_model():
             raise ValueError("OPENROUTER_MODEL environment variable is not set.")
 
         return ChatOpenAI(
-            model=model,
+            openai_api_key=api_key,
+            openai_api_base=OPENROUTER_BASE_URL,
+            model_name=model,
             temperature=0.9,
-            openrouter_base_url=OPENROUTER_BASE_URL,
-            openai_api_key=api_key
         )
     except Exception as e:
         print(f"Error initializing ChatOpenAI: {e}")

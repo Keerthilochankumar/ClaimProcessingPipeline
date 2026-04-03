@@ -1,6 +1,7 @@
 
 from pipeline.llm import get_chat_model
-from pipeline.nodes import build_messages, extract_json
+from pipeline.nodes.build_messages import build_messages
+from pipeline.nodes.extract_json import extract_json
 from pipeline.state import State
 from typing import Any
 

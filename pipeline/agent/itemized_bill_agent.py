@@ -2,7 +2,8 @@
 from typing import Any
 from pipeline.llm import get_chat_model
 from pipeline.state import State
-from pipeline.nodes import build_messages, extract_json
+from pipeline.nodes.build_messages import build_messages
+from pipeline.nodes.extract_json import extract_json
 
 BILL_PROMPT = """\
 You are an expert medical-insurance data extractor.

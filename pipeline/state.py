@@ -1,7 +1,7 @@
 from __future__ import annotations
-from typing import Any, Dict, Optional
+from typing import Any, TypedDict
 
-class State:
+class State(TypedDict, total=False):
     claim_id: str
     pdf_path: str
     pages_text: dict[int, str]

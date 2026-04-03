@@ -1,7 +1,8 @@
 
 from typing import Any
 from langchain_core.messages import HumanMessage
-from pipeline.nodes import extract_pages_content,extract_json
+from pipeline.nodes.extract_pages_content import extract_pages_content
+from pipeline.nodes.extract_json import extract_json
 from pipeline.state import State
 from pipeline.llm import get_chat_model
 
