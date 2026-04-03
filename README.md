@@ -48,10 +48,9 @@ The data processing lifecycle is managed using a directed state graph to handle 
 
 ## Configuration
 Create a `.env` file in the root directory and configure your LLM settings. Depending on your configuration (e.g., using OpenRouter), add the necessary API keys:
-
 ```env
-OPENROUTER_API_KEY="your-api-key"
-OPENROUTER_MODEL="your-chosen-model"
+SILICONFLOW_API_KEY=sk-""
+SILICONFLOW_MODEL=""
 
 ## Running the Application
 To start the FastAPI development server, run:

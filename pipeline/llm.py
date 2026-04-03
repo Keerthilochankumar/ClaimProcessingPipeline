@@ -1,24 +1,23 @@
 import os
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+from langchain_siliconflow import ChatSiliconFlow
 load_dotenv()
-OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+SILICONFLOW_BASE_URL = "https://api.siliconflow.com/v1"
 
 def get_chat_model():
     try:
-        api_key = os.getenv("OPENROUTER_API_KEY")
-        model = os.getenv("OPENROUTER_MODEL")
+        api_key = os.getenv("SILICONFLOW_API_KEY")
+        model = os.getenv("SILICONFLOW_MODEL")
         if not api_key:
-            raise ValueError("OPENROUTER_API_KEY environment variable is not set.")
+            raise ValueError("SILICONFLOW_API_KEY environment variable is not set.")
         if not model:
-            raise ValueError("OPENROUTER_MODEL environment variable is not set.")
+            raise ValueError("SILICONFLOW_MODEL environment variable is not set.")
 
-        return ChatOpenAI(
-            openai_api_key=api_key,
-            openai_api_base=OPENROUTER_BASE_URL,
-            model_name=model,
-            temperature=0.9,
+        return ChatSiliconFlow(
+            siliconflow_api_key=api_key,
+            base_url=SILICONFLOW_BASE_URL,
+            model=model
         )
     except Exception as e:
-        print(f"Error initializing ChatOpenAI: {e}")
+        print(f"Error initializing ChatSiliconFlow: {e}")
         raise
